@@ -1,0 +1,1 @@
+(in-package :om)(setf |OpenMusic|::*ws-params* (list 1 (om-api:om-make-point 20 50) (om-api:om-make-point 500 400)))
