@@ -1,0 +1,17 @@
+(in-package :om+)
+
+(defun chord-to-hash (chord)
+  (let ((ht (make-hash-table)))
+    (setf (gethash :midicents ht)  (midi-cent chord))
+    (setf (gethash :velocities ht) (velocity chord))
+    (setf (gethash :durations ht)  (duration chord))
+    (setf (gethash :channels ht)   (channel chord))
+    ht))
+
+(defun chord-seq-to-vector (chord-seq)
+  (let* ((chords (elements chord-seq))
+         (vec (make-array (length chords))))
+    (loop for i from 0 below (length chords)
+          for chord = (nth i chords)
+          do (setf (aref vec i) (chord-to-hash chord)))
+    vec))

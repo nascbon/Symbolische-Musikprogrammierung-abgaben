@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 (defvar *satz* \'92(Bitte hinterlassen Sie Namen und Telefonnummer nach dem Signalton))\
+\
+\
+\
+\
+\
+\
+(setq *satz* (subst 'Vergessen (car (cdr *satz*)) *satz*))\
+(print *satz*)\
+\
+\
+\
+\
+(setq *satz* (remove 'Signalton *satz*))\
+(setq *satz* (reverse (append '(Signal Kampf) (reverse *satz*))))\
+(print *satz*)\
+\
+\
+\
+(pop *satz*)\
+(setq *satz* (remove (nth 1 *satz*) *satz*))\
+(setq *satz* (append '(Sie Werden) (butlast (cdr *satz*)) '(Erfahren)))\
+(print *satz*)\
+\
+\
+\
+(setq *satz* (reverse *satz*))\
+(print *satz*)}
